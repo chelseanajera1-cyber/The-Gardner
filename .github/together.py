@@ -623,6 +623,250 @@ Treat with neem oil or insecticidal soap if needed.
 Toxic to cats and dogs if ingested.
 Keep out of reach of pets.
 """)
+   # ---------------------------
+# Peace Lily Care Guide Page
+# ---------------------------
+
+def peace_lily_page():
+    st.title("Peace Lily")
+    st.write("This is the Peace Lily plant page.")
+
+    st.header("Peace Lily Care Guide")
+    st.markdown("""
+**Light**
+Best: Bright, indirect light  
+Tolerates: Medium light  
+Avoid: Direct sunlight (can scorch leaves)
+
+Oregon tip: Place near an east- or north-facing window. In darker winter months, move closer to a bright window.
+
+**Light Levels**
+Ideal: 500 to 1,500 lux  
+Tolerates: 300 to 500 lux (fewer blooms)  
+Less than 300 lux: Slow growth, may not flower  
+Direct sun: Leaf burn
+
+---
+
+**Water**
+Peace lilies like consistently moist (not soggy) soil.
+
+Water when the top 1 inch of soil feels dry.
+
+Typically:  
+Spring/Summer: Every 5 to 7 days  
+Fall/Winter: Every 7 to 10 days  
+
+They will droop dramatically when thirsty — but perk up quickly after watering.
+
+Always allow excess water to drain out.
+
+Oregon tip: Reduce watering in winter when light levels drop.
+
+---
+
+**Soil Moisture Reading**
+Soil Condition — Typical Reading  
+
+Completely dry: 850 to 950  
+Dry (needs water): 650 to 800  
+Moist (ideal): 400 to 600  
+Wet / soggy: 250 to 350  
+
+(Target before watering: ~650+)
+
+---
+
+**Temperature**
+Ideal: 65 to 80°F (18 to 27°C)  
+Minimum: 55°F (13°C)  
+
+Keep away from cold drafts and freezing windows.
+
+Daytime Ideal: 65 to 80°F  
+Nighttime Ideal: 60 to 70°F  
+Stress: Below 55°F
+
+---
+
+**Humidity**
+Prefers moderate to high humidity.
+
+Humidity Reading Level:  
+40 to 60% RH: Good  
+60 to 70% RH: Excellent (encourages blooming)  
+Less than 40% RH: Brown leaf tips may appear  
+
+Oregon homes are usually fine, but winter heating can dry the air — use a pebble tray or humidifier if needed.
+
+---
+
+**Soil**
+Use a well-draining indoor potting mix.  
+Optional: Add perlite for better drainage.
+
+---
+
+**Pot & Drainage**
+Use a pot with drainage holes.  
+Repot every 1 to 2 years or when root-bound.
+
+---
+
+**Fertilizer**
+Feed once a month in spring and summer.  
+Use a balanced houseplant fertilizer at ½ strength.  
+Do not fertilize in fall and winter.
+
+Too much fertilizer can cause brown leaf tips.
+
+---
+
+**Pruning & Maintenance**
+Remove spent flowers at the base.  
+Trim yellow or damaged leaves.  
+Wipe leaves occasionally to remove dust.
+
+---
+
+**Pests (Occasional)**
+Watch for:
+Spider mites  
+Mealybugs  
+Fungus gnats  
+
+Treat with neem oil or insecticidal soap if needed.
+
+---
+
+**Pet Safety**
+Toxic to cats and dogs if ingested.  
+Keep out of reach of pets.
+""")
+
+# ---------------------------
+# Spider Plant Care Guide Page
+# ---------------------------
+
+def spider_plant_page():
+    st.title("Spider Plant")
+    st.write("This is the Spider Plant page.")
+
+    st.header("Spider Plant Care Guide")
+    st.markdown("""
+**Light**
+Best: Bright, indirect light  
+Tolerates: Medium light  
+Avoid: Harsh direct afternoon sun (can fade or scorch leaves)
+
+Oregon tip: Place near an east- or north-facing window. In winter, move closer to light for stronger growth.
+
+---
+
+**Light Levels**
+Ideal: 500 to 2,000 lux  
+Tolerates: 300 to 500 lux (slower growth, fewer babies)  
+Less than 300 lux: Thin growth  
+Direct sun: Leaf scorch
+
+---
+
+**Water**
+Water when the top 1 to 2 inches of soil are dry.
+
+Typically:  
+Spring/Summer: Every 7 to 10 days  
+Fall/Winter: Every 10 to 14 days  
+
+Spider plants are sensitive to overwatering and fluoride in tap water.  
+If brown tips appear, try filtered or distilled water.
+
+Always let excess water drain out.
+
+Oregon tip: Cooler temps + low winter light = slower drying. Dont overwater.
+
+---
+
+**Soil Moisture Reading**
+Soil Condition — Typical Reading  
+
+Completely dry: 800 to 950  
+Dry (ready to water): 650 to 800  
+Moist (ideal): 400 to 600  
+Wet / soggy: 250 to 350  
+
+(Target before watering: ~650+)
+
+---
+
+**Temperature**
+Ideal: 65 to 80°F (18 to 27°C)  
+Minimum: 50°F (10°C)  
+
+Avoid cold drafts and freezing windows.
+
+Daytime Ideal: 65 to 80°F  
+Nighttime Ideal: 60 to 70°F  
+Stress: Below 50°F
+
+---
+
+**Humidity**
+Prefers moderate humidity but adapts well to average homes.
+
+Humidity Levels:
+40 to 60% RH: Ideal  
+Less than 40% RH: Brown tips may appear  
+Greater than 70% RH: Fine with good airflow  
+
+Oregon homes are usually fine without extra humidity.
+
+---
+
+**Soil**
+Use a well-draining indoor potting mix.  
+Optional: Add perlite for improved drainage.
+
+---
+
+**Pot & Drainage**
+Use a pot with drainage holes.  
+Repot every 1 to 2 years (they grow fast and can become root-bound).  
+
+They actually bloom and produce "spiderettes" (baby plants) when slightly root-bound.
+
+---
+
+**Fertilizer**
+Feed once a month in spring and summer.  
+Use a balanced houseplant fertilizer at ½ strength.  
+Do not fertilize in fall and winter.  
+
+Too much fertilizer can cause brown tips.
+
+---
+
+**Pruning & Maintenance**
+Trim brown tips with clean scissors.  
+Remove yellow or damaged leaves.  
+Cut and propagate baby plants once roots form.
+
+---
+
+**Pests (Occasional)**
+Watch for:
+Spider mites  
+Aphids  
+Mealybugs  
+
+Treat with neem oil or insecticidal soap if needed.
+
+---
+
+**Pet Safety**
+Non-toxic to cats and dogs.
+""")
+
     if st.button("Back to Plant List"):
         st.session_state.page = "plant_list"
 
@@ -636,3 +880,7 @@ elif st.session_state.page == "pothos":
     pothos_page()
 elif st.session_state.page == "snakeplant":
     snakeplant_page() 
+elif st.session_state.page == "peace_lily":
+    peace_lily_page()
+elif st.session_state.page == "spider_plant":
+    spider_plant_page() 
