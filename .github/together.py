@@ -519,6 +519,113 @@ def pothos_page():
 """)
     if st.button("Back to Plant List"):
         st.session_state.page = "plant_list"
+     
+ # ---------------------------
+# Snake Plant Care Guide Page
+# ---------------------------
+    if st.button("Back to Plant List"):
+        st.session_state.page = "plant_list"
+
+def snakeplant_page():
+    st.title("Snake Plant")
+    st.write("This is the Snake Plant page.")
+
+    st.header("Snake Plant Care Guide")
+    st.markdown("""
+**Light Best:** Bright, indirect light Tolerates: Low light (very adaptable)
+Avoid: Intense direct afternoon sun (can scorch leaves)
+Oregon tip: Does well near east-, north-, or even south-facing windows. In darker winter months, place closer to windows for stronger growth.
+                
+**Light Levels**
+Ideal: 500 to 2,000 lux
+                
+Survives: 200 to 500 lux (very slow growth)
+                
+Less than 200 lux: May survive but growth nearly stops
+                
+Direct sun: Leaf scorch or yellowing
+                
+**Water**
+Water only when soil is completely dry (Snake plants prefer drought over excess moisture).
+Typically:
+Spring/Summer: Every 2 to 3 weeks
+Fall/Winter: Every 3 to 5 weeks
+Always let excess water drain out. Never let sit in standing water.
+Oregon tip: Cooler temps + low light = very slow drying. Overwatering is the #1 cause of root rot, especially in winter.
+                
+**Soil Moisture Reading**
+Soil Condition	Typical Reading
+                
+Completely dry	800 to 950
+                
+Dry (ready to water)	750 to 900
+                
+Lightly moist (acceptable)	500 to 700
+                
+Wet / too moist	250 to 450
+                
+(Target before watering: 750+)
+                
+**Temperature**
+Ideal: 65 to 85°F (18 to 29°C)
+                
+Minimum: 50°F (10°C)
+                
+Keep away from cold drafts and freezing windows.
+                
+**Temperature Reading Condition**
+Daytime Ideal: 65 to 80°F (18 to 27°C)
+                
+Nighttime Ideal: 60 to 70°F (16 to 21°C)
+                
+Stress: Below 50°F (10°C)
+                
+**Humidity**
+Prefers low to moderate humidity. Very tolerant of dry indoor air.
+Oregon homes are usually perfect — no extra humidity needed.
+                
+**Humidity Reading Level**
+30 to 60% RH: Ideal
+                
+Less than 30% RH: Still tolerates well
+                
+Greater than 70% RH: OK, but ensure good airflow to prevent fungal issues
+                
+**Soil**
+Well-draining indoor potting mix.
+Best option: Cactus or succulent mix.
+Optional improvement: Add extra perlite or pumice for faster drainage.
+                
+**Pot & Drainage**
+Always use a pot with drainage holes.
+Terracotta pots are excellent (help soil dry faster).
+Repot every 2 to 3 years or when root-bound.
+                
+**Fertilizer**
+Feed lightly once a month in spring and summer.
+Use a balanced houseplant fertilizer at ½ strength.
+Do not fertilize in fall and winter.
+Overfertilizing can cause leaf burn.
+                
+**Pruning & Maintenance**
+Remove damaged or yellowing leaves at the base.
+Wipe leaves occasionally to remove dust.
+Rotate plant every few months for even growth.
+                
+**Pests (Uncommon)**
+Watch for:
+Spider mites
+Mealybugs
+Fungus gnats (usually from overwatering)
+Treat with neem oil or insecticidal soap if needed.
+                
+**Pet Safety**
+Toxic to cats and dogs if ingested.
+Keep out of reach of pets.
+""")
+    if st.button("Back to Plant List"):
+        st.session_state.page = "plant_list"
+
 
 # ---------------------------
 # Page Routing
