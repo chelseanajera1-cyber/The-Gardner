@@ -1,0 +1,167 @@
+#include <rgb_lcd.h>
+#include <DHT.h>
+
+#define DHT22_PIN 2
+#define DHTTYPE DHT22
+
+rgb_lcd lcd;
+DHT DHT22_Sensor(DHT22_PIN, DHTTYPE);
+
+// ---- PINS ----
+const int switchPin = A1;      // Button moved off A0
+const int lightPin  = A2;      // Light sensor
+const int soilPin   = A0;      // Soil moisture sensor
+
+int switchState = 0;
+int lastSwitchState = HIGH;
+int mode = 0;
+
+// ---- BIG OPEN EYE (top half) ----
+byte eyeOpenTop[8] = {
+  0b01110,
+  0b11111,
+  0b11111,
+  0b11111,
+  0b11111,
+  0b11111,
+  0b11111,
+  0b11111
+};
+
+// ---- BIG OPEN EYE (bottom half) ----
+byte eyeOpenBottom[8] = {
+  0b11111,
+  0b11111,
+  0b11111,
+  0b11111,
+  0b11111,
+  0b11111,
+  0b11111,
+  0b01110
+};
+
+// ---- BIG CLOSED EYE (top) ----
+byte eyeClosedTop[8] = {
+  0b00000,
+  0b00000,
+  0b00000,
+  0b11111,
+  0b11111,
+  0b00000,
+  0b00000,
+  0b00000
+};
+
+// ---- BIG CLOSED EYE (bottom) ----
+byte eyeClosedBottom[8] = {
+  0b00000,
+  0b00000,
+  0b00000,
+  0b11111,
+  0b11111,
+  0b00000,
+  0b00000,
+  0b00000
+};
+
+void setup() {
+  lcd.begin(16, 2);
+  lcd.setRGB(255, 255, 255);   // White background
+
+  pinMode(switchPin, INPUT_PULLUP);
+
+  DHT22_Sensor.begin();        // ✅ Start DHT sensor
+
+  lcd.createChar(0, eyeOpenTop);
+  lcd.createChar(1, eyeOpenBottom);
+  lcd.createChar(2, eyeClosedTop);
+  lcd.createChar(3, eyeClosedBottom);
+}
+
+void drawOpenEyes() {
+  lcd.setCursor(5, 0);
+  lcd.write(byte(0));
+  lcd.setCursor(5, 1);
+  lcd.write(byte(1));
+
+  lcd.setCursor(10, 0);
+  lcd.write(byte(0));
+  lcd.setCursor(10, 1);
+  lcd.write(byte(1));
+}
+
+void drawClosedEyes() {
+  lcd.setCursor(5, 0);
+  lcd.write(byte(2));
+  lcd.setCursor(5, 1);
+  lcd.write(byte(3));
+
+  lcd.setCursor(10, 0);
+  lcd.write(byte(2));
+  lcd.setCursor(10, 1);
+  lcd.write(byte(3));
+}
+
+void loop() {
+  switchState = digitalRead(switchPin);
+
+  if (switchState == LOW && lastSwitchState == HIGH) {
+    mode = (mode + 1) % 4;
+    lcd.clear();
+    delay(200);   // Debounce
+  }
+  lastSwitchState = switchState;
+
+  // ---- MODE 0: EYES ----
+  if (mode == 0) {
+    drawOpenEyes();
+    delay(2000);
+    drawClosedEyes();
+    delay(250);
+    drawOpenEyes();
+    delay(2000);
+  }
+
+  // ---- MODE 1: TEMP & HUMIDITY ----
+  else if (mode == 1) {
+    float humidity = DHT22_Sensor.readHumidity();
+    float tempF = DHT22_Sensor.readTemperature(true); // Fahrenheit
+
+    lcd.setCursor(0, 0);
+    lcd.print("Humidity: ");
+    lcd.print((int)humidity);
+    lcd.print("%");
+
+    lcd.setCursor(0, 1);
+    lcd.print("Temp: ");
+    lcd.print((int)tempF);
+    lcd.print((char)223);
+    lcd.print("F");
+
+    delay(1000);
+  }
+
+  // ---- MODE 2: LIGHT ----
+  else if (mode == 2) {
+    int lightReading = analogRead(lightPin);
+
+    lcd.setCursor(0, 0);
+    lcd.print("Light Intensity");
+    lcd.setCursor(0, 1);
+    lcd.print(lightReading);
+
+    delay(500);
+  }
+
+  // ---- MODE 3: SOIL MOISTURE ----
+  else if (mode == 3) {
+    int soilMoisture = analogRead(soilPin);
+
+    lcd.setCursor(0, 0);
+    lcd.print("Soil Moisture");
+    lcd.setCursor(0, 1);
+    lcd.print(soilMoisture);
+
+    delay(500);
+  }
+}
