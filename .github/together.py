@@ -634,3 +634,5 @@ if st.session_state.page == "plant_list":
     plant_list_page()
 elif st.session_state.page == "pothos":
     pothos_page()
+elif st.session_state.page == "snakeplant":
+    snakeplant_page() 
